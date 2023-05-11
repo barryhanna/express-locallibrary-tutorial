@@ -13,7 +13,12 @@ h1 {
 }
 
 a {
-  color: #00b7ff;
+  color: #a0a0a0;
+}
+
+a:hover {
+  color: #fff;
+  text-decoration: none;
 }
 
 footer {
@@ -25,4 +30,10 @@ footer {
   padding: 50px;
   justify-content: center;
   opacity: 0.7;
+}
+
+.sidebar-nav {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
 }
