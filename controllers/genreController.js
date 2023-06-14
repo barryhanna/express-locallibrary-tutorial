@@ -33,11 +33,11 @@ exports.genre_detail = asyncHandler(async (req, res, next) => {
 });
 
 // Display Genre create form on GET.
+// TODO
 exports.genre_create_get = asyncHandler(async (req, res, next) => {
-	res.send('NOT IMPLEMENTED: Genre create GET');
+	res.render('genre_form', { title: 'Add new genre' });
 });
 
-// Handle Genre create on POST.
 // Handle Genre create on POST.
 exports.genre_create_post = [
 	// Validate and sanitize the name field.
