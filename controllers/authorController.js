@@ -141,11 +141,13 @@ exports.author_delete_post = asyncHandler(async (req, res, next) => {
 });
 
 // Display Author update form on GET.
+// TODO:
 exports.author_update_get = asyncHandler(async (req, res, next) => {
 	res.send('NOT IMPLEMENTED: Author update GET');
 });
 
 // Handle Author update on POST.
+// TODO:
 exports.author_update_post = asyncHandler(async (req, res, next) => {
 	res.send('NOT IMPLEMENTED: Author update POST');
 });

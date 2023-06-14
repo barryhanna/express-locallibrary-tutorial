@@ -97,6 +97,7 @@ exports.bookinstance_create_post = [
 ];
 
 // Display BookInstance delete form on GET.
+// TODO:
 exports.bookinstance_delete_get = asyncHandler(
 	async (req, res, next) => {
 		res.send('NOT IMPLEMENTED: BookInstance delete GET');
@@ -104,6 +105,7 @@ exports.bookinstance_delete_get = asyncHandler(
 );
 
 // Handle BookInstance delete on POST.
+// TODO:
 exports.bookinstance_delete_post = asyncHandler(
 	async (req, res, next) => {
 		res.send('NOT IMPLEMENTED: BookInstance delete POST');
@@ -111,6 +113,7 @@ exports.bookinstance_delete_post = asyncHandler(
 );
 
 // Display BookInstance update form on GET.
+// TODO:
 exports.bookinstance_update_get = asyncHandler(
 	async (req, res, next) => {
 		res.send('NOT IMPLEMENTED: BookInstance update GET');
@@ -118,6 +121,7 @@ exports.bookinstance_update_get = asyncHandler(
 );
 
 // Handle bookinstance update on POST.
+// TODO:
 exports.bookinstance_update_post = asyncHandler(
 	async (req, res, next) => {
 		res.send('NOT IMPLEMENTED: BookInstance update POST');

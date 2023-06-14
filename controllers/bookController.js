@@ -159,11 +159,13 @@ exports.book_create_post = [
 ];
 
 // Display book delete form on GET.
+// TODO:
 exports.book_delete_get = asyncHandler(async (req, res, next) => {
 	res.send('NOT IMPLEMENTED: Book delete GET');
 });
 
 // Handle book delete on POST.
+// TODO:
 exports.book_delete_post = asyncHandler(async (req, res, next) => {
 	res.send('NOT IMPLEMENTED: Book delete POST');
 });
