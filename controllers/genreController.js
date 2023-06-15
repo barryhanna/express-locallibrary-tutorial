@@ -82,7 +82,11 @@ exports.genre_create_post = [
 
 // Display Genre delete form on GET.
 exports.genre_delete_get = asyncHandler(async (req, res, next) => {
-	res.render('genre_form', { title: 'Create Genre' });
+	const genreId = req.params.id;
+	console.log(`Deleting ${genreId}`);
+	await Genre.findByIdAndDelete(genreId);
+	console.log(`Deleted ${genreId}}`);
+	res.redirect('/catalog/genres');
 });
 
 // Handle Genre delete on POST.
