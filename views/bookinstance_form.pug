@@ -3,6 +3,8 @@ extends layout
 block content
   h1=title
 
+  pre= JSON.stringify(bookinstance, null, 2)
+
   form(method='POST' action='')
     div.form-group
       label(for='book') Book:
