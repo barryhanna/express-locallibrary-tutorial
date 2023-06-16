@@ -17,4 +17,8 @@ block content
       else
         p This genre has no books
 
-    a(href=`${genre.url}/delete`) Delete Genre
+    form(action=`${genre.url}/update` method="GET")
+      button(type="submit") Edit Genre
+
+    form(action=`${genre.url}/delete` method="POST")
+      button(type="submit") Delete Genre
