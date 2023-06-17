@@ -33,6 +33,10 @@ footer {
 	z-index: -1;
 }
 
+pre {
+	color: #eee;
+}
+
 .sidebar-nav {
 	margin-top: 20px;
 	padding: 0;
