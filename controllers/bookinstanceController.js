@@ -98,23 +98,24 @@ exports.bookinstance_create_post = [
 
 // Display BookInstance delete form on GET.
 exports.bookinstance_delete_get = asyncHandler(async (req, res) => {
-	const id = req.params;
-	await BookInstance.findOneAndDelete({ _id: id });
+	await BookInstance.findOneAndDelete({
+		_id: req.params.id,
+	});
 	res.redirect('/catalog/bookinstances');
 });
 
 // Handle BookInstance delete on POST.
 exports.bookinstance_delete_post = asyncHandler(async (req, res) => {
-	const { id } = req.body;
-	await BookInstance.findOneAndDelete({ _id: id });
+	await BookInstance.findOneAndDelete({ _id: req.params.id });
 	res.redirect('/catalog/bookinstances');
 });
 
 // Display BookInstance update form on GET.
 exports.bookinstance_update_get = asyncHandler(async (req, res) => {
-	const { id } = req.params;
 	const allBooks = await Book.find({}, 'title').exec();
-	const bookInstance = await BookInstance.findById({ _id: id });
+	const bookInstance = await BookInstance.findById({
+		_id: req.params.id,
+	});
 	res.render('bookinstance_form', {
 		title: 'Update BookInstance',
 		bookinstance: bookInstance,
@@ -170,9 +171,12 @@ exports.bookinstance_update_post = [
 			console.log(`Data is valid for ${req.body._id}`);
 			console.log(JSON.stringify(bookInstance, null, 2));
 			const updatedBookInstance =
-				await BookInstance.findByIdAndUpdate(req._id, {
-					...bookInstance,
-				});
+				await BookInstance.findByIdAndUpdate(
+					{ _id: req.body.id },
+					{
+						...bookInstance,
+					}
+				);
 			console.log(updatedBookInstance);
 
 			res.redirect('/catalog/bookinstances');

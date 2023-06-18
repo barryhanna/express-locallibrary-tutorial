@@ -19,8 +19,12 @@ block content
   if bookinstance.status!='Available'
     p #[strong Due back:] #{bookinstance.due_back_formatted}
 
+  pre=JSON.stringify(bookinstance, null, 2)
+
   form(action=bookinstance.url+'/update', method="GET")
     button(type="submit") Edit
 
   form(action=bookinstance.url+'/delete', method="POST")
     button(type="submit") Delete
+
+  a(href=bookinstance.url+'/delete') Delete via GET
