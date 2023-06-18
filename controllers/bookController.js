@@ -159,13 +159,25 @@ exports.book_create_post = [
 ];
 
 // Display book delete form on GET.
-// TODO:
 exports.book_delete_get = asyncHandler(async (req, res, next) => {
-	res.send('NOT IMPLEMENTED: Book delete GET');
+	// Check for any book instances
+	console.log(req.params.id);
+	const book = await BookInstance.findOne({
+		id: req.params.id,
+	}).exec();
+	console.log(`Found ${book}`);
+	if (book) {
+		// we have a book instance and cannot delete the book
+		console.log('Cannot delete, an instance still exists');
+		res.redirect(`/catalog/book/${req.params.id}`);
+	} else {
+		const doc = await Book.findByIdAndDelete(req.params.id);
+		console.log(`Deleted: ${doc}`);
+		res.redirect('/catalog/books');
+	}
 });
 
 // Handle book delete on POST.
-// TODO:
 exports.book_delete_post = asyncHandler(async (req, res, next) => {
 	res.send('NOT IMPLEMENTED: Book delete POST');
 });
