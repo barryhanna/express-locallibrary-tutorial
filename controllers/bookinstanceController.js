@@ -168,17 +168,17 @@ exports.bookinstance_update_post = [
 			return;
 		} else {
 			// Data from form is valid
-			console.log(`Data is valid for ${req.body._id}`);
-			console.log(JSON.stringify(bookInstance, null, 2));
+			// console.log(`Data is valid for ${req.body.id}`);
+			// console.log(`Data is valid for ${req.params.id}`);
+			// console.log(JSON.stringify(bookInstance, null, 2));
 			const updatedBookInstance =
 				await BookInstance.findByIdAndUpdate(
-					{ _id: req.body.id },
+					{ _id: req.params.id },
 					{
 						...bookInstance,
 					}
 				);
-			console.log(updatedBookInstance);
-
+			// console.log(updatedBookInstance);
 			res.redirect('/catalog/bookinstances');
 		}
 	}),
